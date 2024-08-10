@@ -5,6 +5,8 @@ An Onchain App Template build with [OnchainKit](https://onchainkit.xyz), and rea
 
 The template is a simple swap app made with the OnchainKit [Swap component](https://onchainkit.xyz/docs/swap/swap).
 
+![token-community](https://github.com/fakepixels/token-machine/blob/main/public/token-community.png)
+
 <br />
 
 ## Setup
