@@ -1946,6 +1946,28 @@ span.orange {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 28.27%, rgba(27, 241, 255, 0.3) 100%);
 }
 
+.swap {
+  position: relative;
+  z-index: 1;
+}
+
+.swap::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-color: #fff;
+}
+
+.swap::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(28.27%, rgba(255, 255, 255, 0)), to(rgba(27, 241, 255, 0.3)));
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 28.27%, rgba(27, 241, 255, 0.3) 100%);
+}
+
 .base__container {
   position: relative;
   z-index: 2;

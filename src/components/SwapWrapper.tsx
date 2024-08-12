@@ -1,6 +1,4 @@
 'use client';
-import { useCallback } from 'react';
-import { Name } from '@coinbase/onchainkit/identity';
 import { 
   Swap, 
   SwapAmountInput, 
@@ -9,15 +7,11 @@ import {
   SwapMessage
 } from '@coinbase/onchainkit/swap'; 
 import { Wallet, ConnectWallet } from '@coinbase/onchainkit/wallet';
-import { useAccount, useSendTransaction } from 'wagmi';
+import { useAccount } from 'wagmi';
 import type { Token } from '@coinbase/onchainkit/token';
-import { useChainId } from 'wagmi'
 
 export default function SwapComponents() {
   const { address } = useAccount();
-  const chainId = useChainId();
-  console.log({ chainId })
-  const { sendTransaction } = useSendTransaction();
  
   const ETHToken: Token = {
       address: "",
@@ -40,28 +34,28 @@ export default function SwapComponents() {
   const swappableTokens: Token[] = [ETHToken, MochiToken];
  
   return (
-    address ? (
-      <Swap address={address}>
-        <SwapAmountInput className='bg-[#F0F0F0] text-white'
-          label="Sell"
-          swappableTokens={swappableTokens} 
-          token={ETHToken} 
-          type="from"
-        /> 
-        <SwapToggleButton /> 
-        <SwapAmountInput className='bg-[#F0F0F0] text-white'
-          label="Buy"
-          swappableTokens={swappableTokens} 
-          token={MochiToken} 
-          type="to"
-        /> 
+    <Swap address={address ?? MochiToken.address as `0x${string}`}>
+      <SwapAmountInput className='bg-[#F0F0F0] text-white'
+        label="Sell"
+        swappableTokens={swappableTokens} 
+        token={ETHToken} 
+        type="from"
+      /> 
+      <SwapToggleButton /> 
+      <SwapAmountInput className='bg-[#F0F0F0] text-white'
+        label="Buy"
+        swappableTokens={swappableTokens} 
+        token={MochiToken} 
+        type="to"
+      /> 
+      {address ? (
         <SwapButton className='bg-[#FF9D49] text-white'/> 
-        <SwapMessage /> 
-      </Swap> 
-    ) : (
-      <Wallet>
-        <ConnectWallet />
-      </Wallet>
-    )
+      ) : (
+        <Wallet>
+          <ConnectWallet />
+        </Wallet>
+      )}
+      <SwapMessage /> 
+    </Swap>
   );
 }
