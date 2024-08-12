@@ -15,14 +15,11 @@
         }));
     }
     function addLoadedClass() {
-        if (!document.documentElement.classList.contains("loading")) {
-            document.documentElement.classList.add("loaded");
-        } 
-        // window.addEventListener("load", (function() {
-        //     setTimeout((function() {
-        //         document.documentElement.classList.add("loaded");
-        //     }), 0);
-        // }));
+        setTimeout((function() {
+            if (!document.documentElement.classList.contains("loading")) {
+                document.documentElement.classList.add("loaded");
+            } 
+        }), 800);
     }
     function getHash() {
         if (location.hash) return location.hash.replace("#", "");

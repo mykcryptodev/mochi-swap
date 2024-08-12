@@ -1,15 +1,8 @@
 'use client';
-import Footer from 'src/components/Footer';
-import TransactionWrapper from 'src/components/TransactionWrapper';
-import WalletWrapper from 'src/components/WalletWrapper';
-import { COMMUNITY_LINK } from 'src/links';
-import OnchainkitSvg from 'src/svg/CommunitySvg';
 import { useAccount } from 'wagmi';
 import LoginButton from '../components/LoginButton';
 import SignupButton from '../components/SignupButton';
 import SwapWrapper from 'src/components/SwapWrapper';
-import Image from 'next/image';
-import meetMochi from '../images/meet-mochi.png';
 import Head from 'next/head';
 import { useEffect } from 'react';
 
@@ -23,8 +16,7 @@ export default function Page() {
       document.body.appendChild(script);
     };
 
-    window.addEventListener('load', handleLoad);
-    return () => window.removeEventListener('load', handleLoad);
+    handleLoad();
   }, []);
 
   return (
@@ -199,7 +191,7 @@ export default function Page() {
                       <span>That's quite <br />
                         the combo!
                       </span>
-                      <img src="img/base/01.svg" alt="Icon" />
+                      <img src="img/base/01.svg" alt="Icon" className="min-w-[194px] min-h-[112px]" />
                     </div>
                   </div>
                   <div className="base__item item-base">
@@ -210,7 +202,7 @@ export default function Page() {
                     <div data-watch-threshold="0.8" data-watch-once data-watch className="item-base__image">
                       <span>We received a grant<br />
                         from Coinbase!</span>
-                      <img src="img/base/02.svg" alt="Icon" />
+                      <img src="img/base/02.svg" alt="Icon" className="min-w-[248px] min-h-[117px]" />
                     </div>
                   </div>
                 </div>
