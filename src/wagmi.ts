@@ -31,7 +31,7 @@ export function useWamigConfig() {
         },
       ],
       {
-        appName: 'onchainkit',
+        appName: 'Mochi',
         projectId,
       },
     );
