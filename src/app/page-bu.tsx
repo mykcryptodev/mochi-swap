@@ -11,21 +11,9 @@ import SwapWrapper from 'src/components/SwapWrapper';
 import Image from 'next/image';
 import meetMochi from '../images/meet-mochi.png';
 import Head from 'next/head';
-import { useEffect } from 'react';
 
 export default function Page() {
   const { address } = useAccount();
-  useEffect(() => {
-    const handleLoad = () => {
-      const script = document.createElement('script');
-      script.src = '/js/app.js';
-      script.async = true;
-      document.body.appendChild(script);
-    };
-
-    window.addEventListener('load', handleLoad);
-    return () => window.removeEventListener('load', handleLoad);
-  }, []);
 
   return (
     <>
@@ -214,30 +202,6 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </section>
-            <section className="mt-6 mb-6 flex w-full flex-col md:flex-row bg-[#FF9D49]">
-              <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-0">
-                <a
-                  href={COMMUNITY_LINK}
-                  title="Token"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <OnchainkitSvg />
-                </a>
-                <div className="flex items-center gap-3 z-20">
-                  <SignupButton />
-                  {!address && <LoginButton />}
-                </div>
-              </div>
-            </section>
-            <section className="templateSection flex w-full flex-col items-center justify-center gap-4 rounded-xl bg-[#FF9D49] px-4 py-12 md:grow">
-              <div className="flex w-full items-center justify-center mt-[-50px] mb-[-20px]">
-                <p className="text-2xl font-bold mt-[20px] mb-[20px] text-black">The cutest cat community</p>
-              </div>
-              <div className="z-10 flex w-full items-center justify-center mt-[10x]">
-                <SwapWrapper />
               </div>
             </section>
             <div className="page__line line">
