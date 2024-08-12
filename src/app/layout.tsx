@@ -6,7 +6,6 @@ import '@coinbase/onchainkit/styles.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import Script from 'next/script';
 const OnchainProviders = dynamic(
   () => import('src/components/OnchainProviders'),
   {
@@ -20,12 +19,12 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Community Swap',
-  description: 'Built with OnchainKit',
+  title: 'Mochi',
+  description: `Named after the CEO of Coinbase's pet cat, $MOCHI pairs the unstoppable narrative of being Brian Armstrong's cat with Coinbase's push to bring the masses onchain to Base. The masses will love Mochi, and thousands on Base already do.`,
   openGraph: {
-    title: 'Community Swap',
-    description: 'Built with OnchainKit',
-    images: [`${NEXT_PUBLIC_URL}/vibes/vibes-19.png`],
+    title: 'Mochi',
+    description: `Named after the CEO of Coinbase's pet cat, $MOCHI pairs the unstoppable narrative of being Brian Armstrong's cat with Coinbase's push to bring the masses onchain to Base. The masses will love Mochi, and thousands on Base already do.`,
+    images: [`${NEXT_PUBLIC_URL}/img/logo.png`],
   },
 };
 
@@ -43,7 +42,6 @@ export default function RootLayout({
       <body className="flex items-center justify-center">
         <OnchainProviders>{children}</OnchainProviders>
       </body>
-      {/* <Script src="/js/app.js" /> */}
     </html>
   );
 }
