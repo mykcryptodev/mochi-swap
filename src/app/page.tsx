@@ -165,7 +165,7 @@ export default function Page() {
                 </div>
               </div>
             </section>
-            <section className="page__base base">
+            <section className="page__base base"  style={{ paddingBottom: '70px' }}>
               <div className="base__container">
                 <div className="base__decor-item base__decor-item--1">
                   <img loading="lazy" src="img/base/decor1.png" alt="Decor Image" />
@@ -208,7 +208,7 @@ export default function Page() {
                 </div>
               </div>
             </section>
-            <section className="page__base swap">
+            <section className="page__base swap" style={{ paddingTop: '10px' }}>
               <div className="my-6 flex w-full flex-col md:flex-row mx-auto">
                 <div className="flex w-full flex-row items-center justify-center gap-2 md:gap-0">
                   <div className="flex items-center gap-3 z-20">
